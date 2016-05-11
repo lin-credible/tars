@@ -96,38 +96,39 @@ gulp                 # 启动 gulp 任务，自动监听 scss 文件变更，生
   }
   ```
 
-  ### tars.xxx.com 配置
+## tars.xxx.com nginx配置
+
   ```
   server {
-      listen 80;
-      server_name tars.xxx.com;
+    listen 80;
+    server_name tars.xxx.com;
+    
+    index index.php index.html;
+    
+    access_log /var/log/tars.xxx.com-access.log main;
+    error_log /var/log/tars.xxx.com-error.log error;
       
-      index index.php index.html;
-      
-      access_log /var/log/tars.xxx.com-access.log main;
-      error_log /var/log/tars.xxx.com-error.log error;
-        
-      root {path-to-console-www};
+    root {path-to-console-www};
 
-      location / {
-          try_files $uri $uri/ /index.php;
-      }
+    location / {
+        try_files $uri $uri/ /index.php;
+    }
 
-      location ~ /api/.*\.php {
-          try_files $uri $uri/ /index.php;
-      }
+    location ~ /api/.*\.php {
+        try_files $uri $uri/ /index.php;
+    }
 
-      location ~ ^/download/ {
-          rewrite /download/(.*) $1 break;
-          proxy_pass http://{api-ip}/pkg/$1;
-          proxy_set_header Host api.tars.xxx.com;        
-      }
+    location ~ ^/download/ {
+        rewrite /download/(.*) $1 break;
+        proxy_pass http://{api-ip}/pkg/$1;
+        proxy_set_header Host api.tars.xxx.com;        
+    }
 
-      location ~ \.php$ {
-          fastcgi_pass 127.0.0.1:9000;
-          fastcgi_index index.php;
-          fastcgi_param SCRIPT_FILENAME $document_root/$fastcgi_script_name;
-          include fastcgi_params;
-      }
+    location ~ \.php$ {
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root/$fastcgi_script_name;
+        include fastcgi_params;
+    }
   }
   ```

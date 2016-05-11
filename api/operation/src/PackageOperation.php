@@ -477,10 +477,7 @@ class PackageOperation
             $errorArray['error'] = '数据修改错误';
             Flight::json($errorArray, 400);
         }
-
     }
-
-
 
     public function getUpdateFileList()
     {

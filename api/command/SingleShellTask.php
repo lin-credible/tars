@@ -21,7 +21,6 @@ require_once "config.php";
 $path = __DIR__.'/phpseclib/';
 set_include_path(get_include_path() . PATH_SEPARATOR . $path);
 
-
 $task = new SingleShellTask();
 $task_log = new KLogger(dirname(__FILE__), '../logs/SingleShellTask', KLogger::DEBUG);
 $async_cmd = '';
@@ -198,7 +197,7 @@ class SingleShellTask
                 "timeout"=>60,
                 );
         $ret = $this->magic->http_request($this->passwordUrl,$opt);
-        $data = json_decode($ret,true); 
+        $data = json_decode($ret,true);
         $password = $data['password'];
         return $password;
     }
@@ -221,7 +220,7 @@ class SingleShellTask
                 {
                     $this->log->logError('line'.__LINE__.': mysqli connect err, errno='. $mysqli->connect_errno .'error='. $mysqli->connect_error);
                     $this->code = $mysqli->connect_errno;
-                    $this->msg = 'mysqli connect failed, err='. $mysqli->connect_error;					
+                    $this->msg = 'mysqli connect failed, err='. $mysqli->connect_error;
                     return false;
                 }
             }
@@ -235,7 +234,7 @@ class SingleShellTask
 		{
 			$this->log->logError('line'.__LINE__.': mysqli query err, errno='. $mysqli->errno .'error='. $mysqli->error .'sql = '.$sql);
 			$this->code = $mysqli->errno;
-			$this->msg = 'mysqli query failed, err='. $mysqli->error .'sql = '.$sql;			
+			$this->msg = 'mysqli query failed, err='. $mysqli->error .'sql = '.$sql;
 			return false;
 		}
 
@@ -316,7 +315,7 @@ class Ssh2Helper
             $key->loadKey(file_get_contents(AREA_CONFIG::$privatekey));
 
             $this->ssh = new Net_SSH2($ip,$port,$this->connect_timeout);
-            if (!$this->ssh->login($user_name, $key)) 
+            if (!$this->ssh->login($user_name, $key))
             {
                 $this->log->logError('line'.__LINE__.': Net_SSH2 Login Failed: ip = '.$ip.', user_name = '.$user_name.', key= '.AREA_CONFIG::$privatekey);
                 return -11922;

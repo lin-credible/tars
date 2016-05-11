@@ -2,6 +2,7 @@
 
 // 测试环境调试
 // define('DEBUG', $_SERVER['SERVER_NAME'] === 'steve.pkg.qq.com');
+//
 define('DEBUG', false);
 define('DEV', false);
 

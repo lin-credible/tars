@@ -1,6 +1,7 @@
 #!/bin/sh
 
-ip_inner=`/sbin/ifconfig eth1 2>/dev/null |grep "inet addr:"|awk -F ":" '{ print $2 }'|awk '{ print $1 }'`
+# ip根据情况要调整
+ip_inner=`/sbin/ifconfig eth0 2>/dev/null |grep "inet addr:"|awk -F ":" '{ print $2 }'|awk '{ print $1 }'`
 if [ "${ip_inner}x" = "x" ];then
    ip_inner=`/sbin/ip route|egrep 'src 172\.|src 10\.'|awk '{print $9}'|head -n 1`
 fi
@@ -9,7 +10,7 @@ cd $cur_path
 
 num=0
 
-#�ж�·���Ƿ��ǺϷ��İ�
+#ÅÐ¶ÏÂ·¾¶ÊÇ·ñÊÇºÏ·¨µÄ°ü
 function is_package_directory()
 {
     local path=$1
@@ -192,7 +193,7 @@ function ReportData()
 #delete old ip info
 #delete_ip_info
 
-#ֻ��Ҫɨ������Ŀ¼
+#Ö»ÐèÒªÉ¨ÃèÁ½¸öÄ¿Â¼
 scan_packages "/usr/local/tars" "true"
 scan_packages "/usr/local" "true"
 #

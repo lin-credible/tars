@@ -113,6 +113,7 @@ class PkgWorker
                 $this->rollback($taskId);
                 break;
             case 'restart':
+                //no break
             case 'stop':
             case 'start':
             case 'uninstall':
@@ -873,7 +874,7 @@ class PkgWorker
                 $allStatus = 'failed';
                 break;
             }
-            
+
             if ($ipTaskInfo['status'] == 'started' || $ipTaskInfo['status'] == 'wait') {
                 $allStatus = 'wait';
             }

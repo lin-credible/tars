@@ -42,7 +42,7 @@ class User
             $result = array('code'=>1002,
                     'error'=>'user has exists',
                     );
-            Flight::json($result,400); 
+            Flight::json($result,400);
         }
         $regInfo['regTime'] = date('Y-m-d H:i:s');
         $salt=base64_encode(md5(microtime(true)));

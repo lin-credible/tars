@@ -30,11 +30,11 @@
 
 - 添加业务（可以理解为程序包的分类），入口：
 
-  ![product-entry](http://km.oa.com/files/photos/pictures/201504/1430376189_44_w400_h130.png)
+  ...
 
 - 如果后台需要密码登陆设备，请先导入设备密码，入口：
 
-  ![devices](http://km.oa.com/files/photos/pictures/201504/1430376332_12_w230_h64.png)
+  ...
 
   - 否则，执行程序包的发布等任务时，会出现“无法登录机器”的错误
 
@@ -42,7 +42,7 @@
 
 - 如果未启用第三方登录，请先使用默认 `admin` 账户登录（默认密码为 `admin`），管理用户列表，入口：
 
-  ![users-entry](http://km.oa.com/files/photos/pictures/201504/1430376723_18_w350_h179.png)
+  ...
 
 - 注意：只有系统管理员可以进行业务管理/用户管理
 
@@ -53,44 +53,43 @@
 
 1. 入口：
 
-  ![new-pkg](http://km.oa.com/files/photos/pictures/201504/1429780934_36_w400_h60.png)
+  ...
 
 2. 填写基本信息：
 
-  ![new-pkg-start](http://km.oa.com/files/photos/pictures/201504/1429781533_73_w1020_h600.png)
+  ...
 
 3. 文件管理：（文件的管理是在该包的工作目录实时生效的）
 
-  ![new-pkg-files](http://km.oa.com/files/photos/pictures/201504/1429783094_68_w1020_h590.png)
+  ...
 
 4. 进程及调度等配置：
 
-  ![new-pkg-config](http://km.oa.com/files/photos/pictures/201504/1429783100_47_w1020_h600.png)
+  ...
 
 5. 保存或提交：（保存将保存当前各项配置，下次创建同名的包时，将自动读取；提交则将创建这个包）
 
-  ![new-pkg-submit](http://km.oa.com/files/photos/pictures/201504/1429783104_94_w250_h60.png)
+  ...
 
 ## 安装
 
 1. 入口：（版本详情页面）
-
-  ![install](http://km.oa.com/files/photos/pictures/201504/1429788659_90_w1220_h260.png)
+  ...
 
 2. 安装界面：
 
-  ![install-dialog](http://km.oa.com/files/photos/pictures/201504/1429788642_85_w540_h420.png)
+  ...
 
 3. 安装将启动异步任务，并跳转到任务详情页面
 4. 任务详情页面：
 
-  ![task-detail](http://km.oa.com/files/photos/pictures/201504/1429788667_20_w1020_h540.png)
+  ...
 
 ## 包详情
 
 默认为版本列表页面：
 
-![version-list](http://km.oa.com/files/photos/pictures/201504/1429789256_95_w1220_h460.png)
+...
 
 - 可按版本号、创建者搜索版本，按时间排序等
 - 点击版本号，进入版本详情页面
@@ -109,8 +108,7 @@
 2. 勾选要升级的IP后，点击“升级按钮”
 3. 升级界面：
 
-  ![upgrade](http://km.oa.com/files/photos/pictures/201504/1429790606_75_w1220_h680.png)
-
+  ...
 4. 升级将启动异步任务，并跳转到任务详情页面
 
 ## 其它发布操作（启动/停止/重启/卸载/回滚等）
@@ -132,4 +130,4 @@
 
 如下图所示：
 
-  ![tasks](http://km.oa.com/files/photos/pictures/201504/1429790614_82_w1200_h800.png)
+  ...

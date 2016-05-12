@@ -15,7 +15,12 @@ proc wait {} {
     }
 }
 
-spawn /usr/bin/rsync -ar -e "/usr/bin/ssh -p36000 -q" [lindex $argv 0]@[lindex $argv 1]:[lindex $argv 3] [lindex $argv 4]
+#spawn /usr/bin/rsync -ar -e "/usr/bin/ssh -p36000 -q" [lindex $argv 0]@[lindex $argv 1]:[lindex $argv 3] [lindex $argv 4]
+#
+#rsync: -p36000: unknown option
+#rsync error: syntax or usage error (code 1) at main.c(1422) [client=3.0.6]
+#
+spawn /usr/bin/rsync -ar -e "/usr/bin/ssh -q" [lindex $argv 0]@[lindex $argv 1]:[lindex $argv 3] [lindex $argv 4]
 expect {
     "*assword*"  {
          send "$passwd\n"

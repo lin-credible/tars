@@ -55,7 +55,7 @@ class QueryTask
 			$mysqlTableName = 'pkg_'.substr($task_id,0,8);
 		}
 		
-		$sql = 'select ip,task_status,result,start_time,end_time from '.$mysqlTableName.' where task_id="'.$task_id.'"';
+		$sql = "select ip,task_status,result,start_time,end_time from ".$mysqlTableName." where task_id='".$task_id."'";
 		$mysql_ret = $this->mysqli->query($sql);
 		if(empty($mysql_ret))
 		{

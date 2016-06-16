@@ -81,7 +81,7 @@ class SingleShellTask
 			return $this->formatReturn(-11900,'mysqlConnect failed, code='.$this->code.', msg='.$this->msg);
 		}
 
-		$sql = 'select * from  '.$this->mysqlTableName.'  where task_id="'.$task_id.'" and ip="'.$ip.'"';
+		$sql = "select * from  ".$this->mysqlTableName."  where task_id='".$task_id."' and ip='".$ip."'";
 		$mysql_ret = $this->mysqlQuery($sql);
 		if(empty($mysql_ret))
 		{
